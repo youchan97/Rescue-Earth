@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
     public bool isPause;
     public GameObject menu;
     ButtonManager btnManager;
+    public event Action Restart;
 
     private void Start()
     {
@@ -39,6 +41,11 @@ public class GameManager : MonoBehaviour
                 isPause = true;
                 return;
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Restart();
         }
     }
 }
