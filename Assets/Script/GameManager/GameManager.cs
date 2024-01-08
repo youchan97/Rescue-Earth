@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public bool isPause;
     public GameObject menu;
     ButtonManager btnManager;
-    public event Action Restart;
+    public Action Restart;
 
     private void Start()
     {

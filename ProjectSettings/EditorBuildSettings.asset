@@ -4,5 +4,56 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8a369c8181074ba4fa883f030a079bbf
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Explain.unity
+    guid: bdc19e768e0dfce4590fa03d053b5a58
+  - enabled: 1
+    path: Assets/Scenes/Clear.unity
+    guid: 159561e9caea4c9469c26b07ed37326f
+  - enabled: 1
+    path: Assets/Scenes/Stage4.unity
+    guid: 91f6b0e8f847b4147a449525404a2f37
+  - enabled: 1
+    path: Assets/Scenes/Stage5.unity
+    guid: 40b9848f107308640b4049dedd03bd72
+  - enabled: 1
+    path: Assets/Scenes/Defeat.unity
+    guid: 2f425b5a628f4924d983090f0e8b0fe7
+  - enabled: 1
+    path: Assets/Scenes/Stage6.unity
+    guid: 2805537fef7db7a4fbe5cc37a0e18ff7
+  - enabled: 1
+    path: Assets/Scenes/Stage10.unity
+    guid: e4c4e280a884f7e45a260b2c31ec221f
+  - enabled: 1
+    path: Assets/Scenes/StageMenu.unity
+    guid: b48204ce9b3937f4694ab0eca32aad48
+  - enabled: 1
+    path: Assets/Scenes/FinalVictory.unity
+    guid: 10aa8874b15e4b348916ccf0243d89d4
+  - enabled: 1
+    path: Assets/Scenes/Stage7.unity
+    guid: 8deb12fe453c29847a081808f344682c
+  - enabled: 1
+    path: Assets/Scenes/Stage9.unity
+    guid: ad4494f95ae96c648a36d53582dd98e9
+  - enabled: 1
+    path: Assets/Scenes/Stage8.unity
+    guid: 53f6ed838166c0246a9ed28ffd1a9363
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: 41b679461604bbb40a4ae8eb799dbf97
+  - enabled: 1
+    path: Assets/Scenes/Stage3.unity
+    guid: 7ece99841bab1d745a42a69d8aab1dad
+  - enabled: 1
+    path: Assets/Scenes/Stage1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
