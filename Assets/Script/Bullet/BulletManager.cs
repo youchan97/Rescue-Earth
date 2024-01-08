@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletManager : MonoBehaviour
 {
-    public int collisionCount;
+    public int collisionCount; //ÃÑ¾ËÀÇ Ãæµ¹ °¡´É È½¼ö
 
     public int CollisionCount
     {

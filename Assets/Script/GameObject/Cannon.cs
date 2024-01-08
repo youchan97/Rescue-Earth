@@ -14,12 +14,11 @@ public class Cannon : MonoBehaviour
     private void Start()
     {
         bullet = FindObjectOfType<Bullet>();
-        test = transform.GetChild(0).gameObject;
         SetChilds();
         StartCoroutine(CoolTimeCo());
     }
 
-    IEnumerator CoolTimeCo()
+    IEnumerator CoolTimeCo() //총알이 쏴지자마자 닿는 오류를 막기 위함
     {
         while (true)
         {
@@ -32,25 +31,14 @@ public class Cannon : MonoBehaviour
         }
     }
 
-    public void SetChilds()
+    public void SetChilds() //회전해야하는 오브젝트만 가져옴
     {
         childs[0] = transform.GetChild(0).GetChild(0).gameObject;
         childs[1] = transform.GetChild(0).GetChild(3).gameObject;
         childs[2] = transform.GetChild(0).GetChild(4).gameObject;
     }
 
-    private void Update()
-    {
-        if(isUse == false)
-        {
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        }
-        else
-        {
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        }
-    }
-    public void ChildsHit(bool type)
+    public void ChildsHit(bool type) // 조건부 회전 기능
     {
         for(int i=0; i<childs.Length; i++)
             childs[i].GetComponent<CannonRotate>().isHit = type;
@@ -63,14 +51,20 @@ public class Cannon : MonoBehaviour
             {
                 ChildsHit(true);
                 other.gameObject.SetActive(false);
+                // 총알이 활성화 되는 위치 저장
                 other.GetComponent<Bullet>().bulletActiveTransform = bulletStart.transform;
-                /*if (Input.GetMouseButtonDown(0))
-                {
-                    isUse = false;
-                    other.gameObject.SetActive(true);
-                    ChildsHit(false);
-                }*/
             }
+        }
+    }
+    private void Update()
+    {
+        if(isUse == false)
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 }
