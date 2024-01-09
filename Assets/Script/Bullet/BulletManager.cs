@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletManager : MonoBehaviour
 {
     public int collisionCount; //ÃÑ¾ËÀÇ Ãæµ¹ °¡´É È½¼ö
-
+    int originCount;
     public int CollisionCount
     {
         get { return collisionCount; }
@@ -19,4 +19,10 @@ public class BulletManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        originCount = collisionCount;
+        GameManager.instance.ReStart += () =>
+        { CollisionCount = originCount; };
+    }
 }

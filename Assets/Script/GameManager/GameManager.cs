@@ -8,7 +8,17 @@ public class GameManager : MonoBehaviour
     public bool isPause;
     public GameObject menu;
     ButtonManager btnManager;
-    public Action Restart;
+    public Action ReStart;
+
+    public static GameManager instance = null;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -43,9 +53,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        /*if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Restart();
-        }*/
+            ReStart();
+        }
     }
 }

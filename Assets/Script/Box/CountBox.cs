@@ -10,20 +10,16 @@ public class CountBox : MonoBehaviour
     private void Start()
     {
         originCount = count;
+        GameManager.instance.ReStart += () =>
+        {
+            if (this.gameObject.GetComponent<BoxCollider2D>().enabled == false)
+            {
+                this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
+        };
     }
 
-/*    public int Count
-    {
-        get { return count; }
-        set
-        {
-            count = value;
-            if(count == 0)
-            {
-                gameObject.SetActive(false);
-            }
-        }
-    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -32,7 +28,8 @@ public class CountBox : MonoBehaviour
             count--;
             if(count == 0)
             {
-                gameObject.SetActive(false);
+                this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
         }
     }

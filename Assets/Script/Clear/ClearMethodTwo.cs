@@ -21,7 +21,7 @@ public class ClearMethodTwo : ClearMethod
             }
             else
             {
-                other.GetComponent<Bullet>().ReStart();
+                GameManager.instance.ReStart();
             }
         }
     }
