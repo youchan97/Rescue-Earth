@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
         {
             gameObject.SetActive(false);
             gameObject.transform.position = pos;
+            bulletActiveTransform = null;
         };
     }
     private void OnEnable()

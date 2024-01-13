@@ -16,6 +16,7 @@ public class CountBox : MonoBehaviour
             {
                 this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
                 this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                count = originCount;
             }
         };
     }
