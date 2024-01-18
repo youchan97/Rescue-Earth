@@ -6,12 +6,12 @@ public class CountBox : MonoBehaviour
 {
     public int count;
     public int originCount;
-    BoxCollider2D boxCol;
+    BoxCollider2D boxCollider;
     SpriteRenderer boxSpriteRenderer;
 
     private void Awake()
     {
-        boxCol = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         boxSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -20,9 +20,9 @@ public class CountBox : MonoBehaviour
         originCount = count;
         GameManager.instance.ReStart += () =>
         {
-            if (boxCol.enabled == false)
+            if (boxCollider.enabled == false)
             {
-                boxCol.enabled = true;
+                boxCollider.enabled = true;
                 boxSpriteRenderer.enabled = true;
                 count = originCount;
             }
@@ -37,7 +37,7 @@ public class CountBox : MonoBehaviour
             count--;
             if(count == 0)
             {
-                boxCol.enabled = false;
+                boxCollider.enabled = false;
                 boxSpriteRenderer.enabled = false;
             }
         }
