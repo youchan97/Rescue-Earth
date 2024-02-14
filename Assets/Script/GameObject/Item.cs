@@ -7,15 +7,19 @@ public class Item : MonoBehaviour
     protected BulletManager bulletManager;
     [SerializeField]
     protected int point;
+    CircleCollider2D itemCol;
+    SpriteRenderer itemSpriteRenderer;
     void Start()
     {
+        itemCol = this.gameObject.GetComponent<CircleCollider2D>();
+        itemSpriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         bulletManager = FindObjectOfType<BulletManager>();
         GameManager.instance.ReStart += () =>
         {
-            if (this.gameObject.GetComponent<CircleCollider2D>().enabled == false)
+            if (itemCol == false)
             {
-                this.gameObject.GetComponent<CircleCollider2D>().enabled = true;
-                this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                itemCol.enabled = true;
+                itemSpriteRenderer.enabled = true;
             }
         };
     }
@@ -24,8 +28,8 @@ public class Item : MonoBehaviour
         if (collision.gameObject.GetComponent<Bullet>() != null)
         {
             bulletManager.CollisionCount += point;
-            this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            itemCol.enabled = false;
+            itemSpriteRenderer.enabled = false;
         }
     }
 }
